@@ -1,27 +1,32 @@
 import { useState } from 'react'
+
 import './App.css'
-import { Button, Input, Select, SelectItem } from '@nextui-org/react'
+
+import { 
+  Button,
+  Input,
+  Select,
+  SelectItem
+} from '@nextui-org/react'
 
 function App() {
-  const [price,setPrice] = useState('')
-  const [month,setMonth] = useState('')
-  const [errorMonth,setErrorMonth] = useState(true)
-  const [errorPrice,setErrorPrice] = useState(true)
-  const [total,setTotal] = useState(0)
-  const [isCalculate,setIsCalculate] = useState(false)
+  
+  const [price,setPrice] = useState<string>('')
+  const [month,setMonth] = useState<string>('')
+  const [errorMonth, setErrorMonth] = useState<boolean>(true);
+  const [errorPrice,setErrorPrice] = useState<boolean>(true);
+  const [total,setTotal] = useState<number>(0)
+  const [isCalculate,setIsCalculate] = useState<boolean>(false)
+
   const fnCalculate = () => {
     if(price.length > 0){
-      console.log(errorPrice,"errorPrice")
       setErrorPrice(true)
     }else{
-      console.log(errorPrice,"errorPrice")
       setErrorPrice(false)
     }
     if(month.length > 0){
-      console.log(errorPrice,"errorPrice")
       setErrorMonth(true)
     }else{
-      console.log(errorPrice,"errorPrice")
       setErrorMonth(false)
     }
     const cantidadPrice = parseInt(price)
